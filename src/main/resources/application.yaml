@@ -14,6 +14,11 @@ spring:
           uri: lb://employee-service # Load balance via Eureka
           predicates:
             - Path=/employee/** # Match requests starting with /employee
+        
+        - id: department-service # Unique ID for the route
+          uri: lb://department-service # Load balance via Eureka
+          predicates:
+            - Path=/department/** # Match requests starting with /employee
       
 eureka:
   client:
